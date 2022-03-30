@@ -17,4 +17,29 @@ spec:
         image: 127.0.0.1:30000/webui:v0.1
         ports:
           - name: http-port
-            containerPort:80
+            containerPort: 80
+            
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rngetf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:rngetf
+  template:
+    metadata:
+      labels:
+        app: rngetf
+    spec:
+      containers:
+      - name: rngetf
+        image: 127.0.0.1:30000/rng:v0.1
+        ports:
+          - name: http-port
+            containerPort: 80
+            
+---
