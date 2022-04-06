@@ -43,3 +43,24 @@ spec:
             containerPort: 80
             
 ---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: broker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: broker
+  template:
+    metadata:
+      labels:
+        app: broker
+    spec:
+      containers:
+      - name: broker
+        image: 127.0.0.1:30000/worker:v0.1
+        ports:
+          - name: http-port
+            containerPort: 80
