@@ -4,7 +4,7 @@ import socket
 import time
 import random
 
-##app = Flask(_name_)
+app = Flask(__name__)
 
 historychange = []
 historyvalue = []
@@ -54,8 +54,5 @@ def rngetf(val):
             
     return val
 
-i = 0
-while i < 10:
-    print(rngetf(val))
-    print(historychange[i])
-    i += 1
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=80, threaded=False)
