@@ -26,3 +26,45 @@ spec:
       app: mysql
  
 ---
+
+apiVersion: v1 
+kind: Service 
+metadata:  
+  name: rngcrypto
+spec:  
+  ports:    
+    - port: 80      
+      protocol: TCP      
+      targetPort: 80  
+  selector:    
+      app: rngcrypto
+      
+---
+
+
+apiVersion: v1 
+kind: Service 
+metadata:  
+  name: rngtech
+spec:  
+  ports:    
+    - port: 80      
+      protocol: TCP      
+      targetPort: 80  
+  selector:    
+      app: rngtech
+      
+---
+
+
+apiVersion: v1 
+kind: Service 
+metadata:  
+  name: rngetf 
+spec:  
+  ports:    
+    - port: 80      
+      protocol: TCP      
+      targetPort: 80  
+  selector:    
+      app: rngetf
