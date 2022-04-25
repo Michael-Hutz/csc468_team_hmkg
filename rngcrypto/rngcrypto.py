@@ -18,7 +18,7 @@ def getval():
     return str(val)
 
 ##This will turn into a loop for running if we are just going to display a stream.
-@app.route("/<float:val>")
+@app.route("/<str:val>")
 def rngetf(float(val)):
     
     if firstrun == True:
