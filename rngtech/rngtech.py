@@ -16,7 +16,7 @@ val = 570.00
 
 @app.route("/")
 def getval():
-    return "1.1"
+    return val
 
 ##This will turn into a loop for running if we are just going to display a stream.
 @app.route("/<float:val>")
