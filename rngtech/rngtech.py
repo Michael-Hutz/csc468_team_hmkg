@@ -16,11 +16,11 @@ val = 570.00
 
 @app.route("/")
 def getval():
-    return str(val)
+    return val
 
 ##This will turn into a loop for running if we are just going to display a stream.
-@app.route("/<str:val>")
-def rngetf(float(val)):
+@app.route("/<float:val>")
+def rngetf(val):
 
     if firstrun == True:
             return val
@@ -58,7 +58,7 @@ def rngetf(float(val)):
                 historychange.append(weight)
                 val = val + weight
 
-        return str(val)
+        return val
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80, threaded=False)
