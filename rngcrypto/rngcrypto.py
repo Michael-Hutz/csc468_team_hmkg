@@ -14,7 +14,7 @@ weight = 0
 val = 300.30
 
 ##This will turn into a loop for running if we are just going to display a stream.
-@app.route("/<double:val>")
+@app.route("/<float:val>")
 def rngetf(val):
     
     if firstrun == True:
