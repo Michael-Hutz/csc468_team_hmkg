@@ -16,15 +16,15 @@ else:
 redis = Redis("redis")
 
 def getrngetf():
-    ret = requests.get("http://rngetf/")
+    ret = requests.get("http://rngetf/", val=val)
     return ret.content
 
 def getrngtech():
-    ret = requests.get("http://rngtech/")
+    ret = requests.get("http://rngtech/", val=val)
     return ret.content
 
 def getrngcrypto():
-    ret = requests.get("http://rngcrypto/")
+    ret = requests.get("http://rngcrypto/", val=val)
     return ret.content
 
 def loop(int = 1):
