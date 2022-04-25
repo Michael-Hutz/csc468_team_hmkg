@@ -32,11 +32,10 @@ def loop(int = 1):
     iter = 0
     while True:
         if time.time() > term:
-           log.info("Loop Completed")
+           log.info("{} updates completes".format(iter))
            term = time.time() + int
-        ##iter = iter + 1
-        
         solo()
+        iter = iter + 1
         
 
 def solo():
@@ -46,7 +45,9 @@ def solo():
     tech = getrngtech()
     crypto = getrngcrypto()
     log.info("Price updated for all stocks")
-    updates = redis.hset("etf", etf, "tech", tech, "crypto", crypto)
+    redis.hset("etf", etf)
+    redis.hset("tech", tech)
+    redis.hset("crypto", crypto) 
     log.info("New values: " + redis.hgetall())
 
 
