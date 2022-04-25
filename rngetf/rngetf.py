@@ -13,6 +13,11 @@ direction = 0
 weight = 0
 val = 300.30
 
+
+@app.route("/")
+def getval():
+    return val
+
 ##This will turn into a loop for running if we are just going to display a stream.
 @app.route("/<float:val>")
 def rngetf(val):
