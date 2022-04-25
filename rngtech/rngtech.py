@@ -11,7 +11,7 @@ historyvalue = []
 firstrun = True
 direction = 0
 weight = 0
-val = 300.30
+val = 570.00
 
 ##This will turn into a loop for running if we are just going to display a stream.
 @app.route("/<float:val>")
