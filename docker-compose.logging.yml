@@ -1,0 +1,44 @@
+version: "2"
+
+services:
+  
+  rngetf:
+    build: rngetf
+    ports:
+    - "8000:80"
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+   
+  rngtech:
+    build: rngtech
+    ports:
+    - "8001:80"
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+        
+  rngcrypto:
+    build: rngcrypto
+    ports:
+    - "8002:80"
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201        
+
+  redis:
+    image: redis
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
+
+  broker:
+    build: broker
+    logging:
+      driver: gelf
+      options:
+        gelf-address: udp://localhost:12201
