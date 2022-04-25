@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  rngetf:
+    build: rngetf
+    image: 127.0.0.1:30000/rngetf:v0.1
+    deploy:
+      mode: global
+      
+  rngtech:
+    build: rngtech
+    image: 127.0.0.1:30000/rngtech:v0.1
+    deploy:
+      mode: global
+      
+  rngcrypto:
+    build: rngcrypto
+    image: 127.0.0.1:30000/rngcrypto:v0.1
+    deploy:
+      mode: global      
+
+  redis:
+    image: redis
+
+  broker:
+    build: broker
+    image: 127.0.0.1:30000/broker:v0.1
+    deploy:
+      replicas: 1
