@@ -51,9 +51,12 @@ def solo():
     redis.hset("etf", etf, 1)
     redis.hset("tech", tech, 1)
     redis.hset("crypto", crypto, 1) 
-    log.info("New values etf: " + redis.hgetall("etf"))
-    log.info("New values tech: " + redis.hgetall("tech"))
-    log.info("New values crypto: " + redis.hgetall("crypto"))
+    etflog = redis.hgetall("etf")
+    techlog = redis.hgetall("tech")
+    cryptolog = redis.hgetall("crypto")
+    log.info("ETF Values {}".format(etflog))
+    log.info("Tech Values {}".format(techlog))
+    log.info("Crypto Values {}".format(cryptolog))
 
 
 if __name__ == "__main__":
