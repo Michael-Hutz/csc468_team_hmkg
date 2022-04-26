@@ -48,10 +48,12 @@ def solo():
     tech = getrngtech()
     crypto = getrngcrypto()
     log.info("Price updated for all stocks")
-    redis.hset("etf", etf)
-    redis.hset("tech", tech)
-    redis.hset("crypto", crypto) 
-    log.info("New values: " + redis.hgetall())
+    redis.hset("etf", float(etf))
+    redis.hset("tech", float(tech))
+    redis.hset("crypto", float(crypto)) 
+    log.info("New values etf: " + redis.hgetall("etf"))
+    log.info("New values tech: " + redis.hgetall("tech"))
+    log.info("New values crypto: " + redis.hgetall("crypto"))
 
 
 if __name__ == "__main__":
