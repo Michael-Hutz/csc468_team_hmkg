@@ -17,18 +17,18 @@ redis = Redis("redis")
 
 def getrngetf():
     val = requests.get("http://rngetf/")
-    ret = requests.get("http://rngetf/", val=val)
-    return ret.content
+    ##ret = requests.get("http://rngetf/", val=val)
+    return val.content
 
 def getrngtech():
     val = requests.get("http://rngtech/")
-    ret = requests.get("http://rngtech/", val=val)
-    return ret.content
+    ##ret = requests.get("http://rngtech/", val=val)
+    return val.content
 
 def getrngcrypto():
     val = requests.get("http://rngcrypto/")
-    ret = requests.get("http://rngcrypto/", val=val)
-    return ret.content
+    ##ret = requests.get("http://rngcrypto/", val=val)
+    return val.content
 
 def loop(int = 1):
     term = 0
