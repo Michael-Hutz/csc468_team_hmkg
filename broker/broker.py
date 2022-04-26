@@ -6,6 +6,8 @@ import time
 
 DEBUG = os.environ.get("DEBUG", "").lower().startswith("y")
 
+tally = 0
+
 log = logging.getLogger(__name__)
 if DEBUG:
     logging.basicConfig(level=logging.DEBUG)
@@ -17,17 +19,17 @@ redis = Redis("redis")
 
 def getrngetf():
     val = requests.get("http://rngetf/")
-    ##ret = requests.get("http://rngetf/", val=val)
+    ret = requests.get("http://rngetf/val/")
     return val.content
 
 def getrngtech():
     val = requests.get("http://rngtech/")
-    ##ret = requests.get("http://rngtech/", val=val)
+    ret = requests.get("http://rngtech/val/")
     return val.content
 
 def getrngcrypto():
     val = requests.get("http://rngcrypto/")
-    ##ret = requests.get("http://rngcrypto/", val=val)
+    ret = requests.get("http://rngcrypto/val/)
     return val.content
 
 def loop(int = 1):
