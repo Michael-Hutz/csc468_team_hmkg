@@ -37,6 +37,7 @@ def loop(int = 1):
         if time.time() > term:
            log.info("{} updates completes".format(iter))
            term = time.time() + int
+        time.sleep(3)
         solo()
         iter = iter + 1
         
