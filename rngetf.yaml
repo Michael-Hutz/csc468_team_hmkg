@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis
+  name: rngetf
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: redis
+      app: rngetf
   template:
     metadata:
       labels:
-        app: redis
+        app: rngetf
     spec:
       containers:
-      - name: redis
-        image: redis
+      - name: rngetf
+        image:  DOCKER_REGISTRY/rngetf:BUILD_NUMBER
         ports:
           - name: http-port
-            containerPort: 6379
+            containerPort: 80
