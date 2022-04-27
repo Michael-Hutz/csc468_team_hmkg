@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: broker
+  name: rngetf
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
-      app: broker
+      app: rngetf
   template:
     metadata:
       labels:
-        app: broker
+        app: rngetf
     spec:
       containers:
-      - name: broker
-        image: DOCKER_REGISTRY/broker:BUILD_NUMBER
+      - name: rngetf
+        image:  DOCKER_REGISTRY/rng:BUILD_NUMBER
         ports:
           - name: http-port
             containerPort: 80
