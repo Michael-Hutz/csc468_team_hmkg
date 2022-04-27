@@ -1,20 +1,21 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis
+  name: rngtech
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: redis
+      app: rngtech
   template:
     metadata:
       labels:
-        app: redis
+        app: rngtech
     spec:
       containers:
-      - name: redis
-        image: redis
+      - name: rngtech
+        image:  DOCKER_REGISTRY/rngtech:BUILD_NUMBER
         ports:
           - name: http-port
-            containerPort: 6379
+            containerPort: 80
