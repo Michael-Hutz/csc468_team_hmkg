@@ -28,9 +28,9 @@ pipeline {
                 sshagent(credentials: ['cloudlab']) {
                     sh "sed -i 's/DOCKER_REGISTRY/${docker_user}/g' rngcrypto.yaml"
                     sh "sed -i 's/BUILD_NUMBER/${BUILD_NUMBER}/g' rngcrypto.yaml"
-                    sh 'scp -r -v -o StrictHostKeyChecking=no *.yaml MH824134@clnodevm063-1.clemson.cloudlab.us:~/'
-                    sh 'ssh -o StrictHostKeyChecking=no MH824134@clnodevm063-1.clemson.cloudlab.us kubectl apply -f /users/MH824134/rngcrypto.yaml -n jenkins'
-                    sh 'ssh -o StrictHostKeyChecking=no MH824134@clnodevm063-1.clemson.cloudlab.us kubectl apply -f /users/MH824134/rngcrypto-service.yaml -n jenkins'                                        
+                    sh 'scp -r -v -o StrictHostKeyChecking=no *.yaml MH824134@clnodevm157-1.clemson.cloudlab.us:~/'
+                    sh 'ssh -o StrictHostKeyChecking=no MH824134@clnodevm157-1.clemson.cloudlab.us kubectl apply -f /users/MH824134/rngcrypto.yaml -n jenkins'
+                    sh 'ssh -o StrictHostKeyChecking=no MH824134@clnodevm157-1.clemson.cloudlab.us kubectl apply -f /users/MH824134/rngcrypto-service.yaml -n jenkins'                                        
                 }
             }
         }
