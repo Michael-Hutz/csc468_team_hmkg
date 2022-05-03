@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+<head>  
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "StockWatcher"
+	},
+	data: [{        
+		type: "line",
+		name: "Tech",
+		color: "#369EAD",
+		visible: true,
+      	indexLabelFontSize: 16,
+		//placeholder data
+		dataPoints: [
+			{ y: 450 },
+			{ y: 414 },
+			{ y: 520 },
+			{ y: 460 },
+			{ y: 450 },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 480 },
+			{ y: 410 },
+			{ y: 500 },
+			{ y: 480 },
+			{ y: 510 }
+		]
+	},
+	{
+		type: "line",
+		name: "Crypto",
+		color: "#C24642",
+		visible: true,
+		indexLabelFontSize: 16,
+		//placeholder data
+		dataPoints: [
+			{ y: 455 },
+			{ y: 415 },
+			{ y: 528 },
+			{ y: 469 },
+			{ y: 459 },
+			{ y: 509 },
+			{ y: 489 },
+			{ y: 489 },
+			{ y: 419 },
+			{ y: 509 },
+			{ y: 489 },
+			{ y: 519 }
+		]
+	},
+	{
+		type: "line",
+		name: "ETF",
+		color: "#7F6084",
+		visible: true,
+		indexLabelFontSize: 16,
+		//placeholder data
+		dataPoints: [
+			{ y: 555 },
+			{ y: 515 },
+			{ y: 628 },
+			{ y: 569 },
+			{ y: 559 },
+			{ y: 609 },
+			{ y: 589 },
+			{ y: 589 },
+			{ y: 619 },
+			{ y: 609 },
+			{ y: 589 },
+			{ y: 619 }
+		]
+	}]
+});
+chart.render();
+
+document.getElementById("Tech").onclick =  function(){
+   chart.options.data[0].visible = !chart.options.data[0].visible;
+   chart.render();
+ };
+ 
+ document.getElementById("Crypto").onclick =  function(){
+   chart.options.data[1].visible = !chart.options.data[1].visible;
+   chart.render();
+ };
+ 
+ document.getElementById("ETF").onclick =  function(){
+   chart.options.data[2].visible = !chart.options.data[2].visible;
+   chart.render();
+ };
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<button id="Tech">Tech</button>
+<button id="Crypto">Crypto</button>
+<button id="ETF">ETF</button>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
